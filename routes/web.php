@@ -6,7 +6,9 @@ use App\Http\Controllers\OperacionesController;
 use App\Http\Controllers\ProviderController;
 
 Route::get('/provid', [ProviderController::class, 'create2']);
+Route::get('/store2', [ProviderController::class, 'store2']);
 Route::get('/providers', [ProviderController::class, 'index2']);
+Route::post('/provid/store2', [ProviderController::class, 'store2'])->name('store2');
 Route::get('/sumar/{num1}/{num2}',[OperacionesController::class,'suma']);
 Route::get('/restar/{num1}/{num2}',[OperacionesController::class,'resta']);
 Route::get('/X/{num1}/{num2}',[OperacionesController::class,'multi']);
