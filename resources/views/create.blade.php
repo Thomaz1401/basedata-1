@@ -24,7 +24,7 @@
                 price:
             </label>
                 <br>
-                <input type="text" name="price">
+                <input type="" name="price">
         <br><br>
         <button type="submit">Enviar Formulario:</button>
         </form>
