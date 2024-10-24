@@ -6,7 +6,7 @@
     <title>Crear Producto</title>
 </head>
 <body>
-    <form action="{{route('product.store')}}" method="POST" enctype="multipart/form-data">
+    <form action="{{route('store')}}" method="POST" enctype="multipart/form-data">
         @csrf
         <label>
             Nombre:
