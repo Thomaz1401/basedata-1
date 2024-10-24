@@ -13,6 +13,11 @@ return new class extends Migration
     {
         Schema::create('providers', function (Blueprint $table) {
             $table->id();
+            $table->string('name');
+            $table->text('description');
+            $table->integer('price');
+            $table->integer('create_at');
+            $table->integer('update_at');
             $table->timestamps();
         });
     }

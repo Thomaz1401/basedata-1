@@ -18,7 +18,6 @@ return new class extends Migration
             $table->integer('price');
             $table->integer('create_at');
             $table->integer('update_at');
-            $table->timestamps();
 
         });
     }

@@ -6,19 +6,18 @@ use Illuminate\Http\Request;
 
 class ProviderController extends Controller
 {
-    public function index1(){ //$product=Product::find(2);
-        $provider=Product::all();
-        return view('product.list', compact('products'));
+    public function index2(){ //$product=Product::find(2);
+        $provider=Provider::all();
+        return view('list', compact('products'));
      }
      
-     public function create (){
+     public function create2 (){
 
-        return view('create');
+        return view('create2');
 
     }
-    public function store(Request $request){
+    public function store2(Request $request){
     
-            return $request;
             $provider= new Product();
             $provider->name=$request->name;
             $provider->description=$request->description;
