@@ -4,6 +4,15 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ProductController;
 use App\Http\Controllers\OperacionesController;
 use App\Http\Controllers\ProviderController;
+use App\Http\Controllers\JATSController;
+
+use App\Http\Controllers\TareaController;
+
+Route::resource('tareas', TareaController::class);
+// Ruta para confirmar la eliminación
+Route::get('tareas/{tarea}/confirmDelete', [TareaController::class, 'confirmDelete'])->name('tareas.confirmDelete');
+// Ruta para confirmar la actualización
+Route::get('tareas/{tarea}/confirmUpdate', [TareaController::class, 'confirmUpdate'])->name('tareas.confirmUpdate');
 
 Route::get('/provid', [ProviderController::class, 'create2']);
 Route::get('/store2', [ProviderController::class, 'store2']);
@@ -18,5 +27,7 @@ Route::get('/cuadratica',[ProductController::class,'cuadratica']);
 Route::get('/create',[ProductController::class,'create']);
 Route::post('/store',[ProductController::class,'store'])->name('store');
 Route::get('/products',[ProductController::class,'index']);
+Route::get('/solicitar-servicio', [JATSController::class, 'create'])->name('JATS.create');
+Route::post('/solicitar-servicio', [JATSController::class, 'store'])->name('JATS.store');
 
 
