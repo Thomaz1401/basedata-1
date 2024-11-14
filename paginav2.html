@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Incolmotos - Página de Ejemplo</title>
+    <style>
+        /* Estilos generales */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+
+        /* Encabezado */
+        header {
+            background-color: #000000;
+            color: #ffffff;
+            padding: 15px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        header img {
+            height: 50px;
+        }
+
+        /* Menú de navegación */
+        nav ul {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+        }
+
+        nav ul li {
+            margin-left: 20px;
+        }
+
+        nav ul li a {
+            color: #ffffff;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        /* Sección principal */
+        .hero {
+            background-image: url('./6873340-uhd_3840_2160_25fps.mp4');
+            background-position: center;
+            height: 500px;
+            justify-content: center;
+            align-items: center;
+            color: #000000;
+            text-align: center;
+        }
+        /* Secciones de contenido */
+        .section {
+            padding: 60px 20px;
+            text-align: center;
+        }
+
+        .section h2 {
+            margin-bottom: 20px;
+            color: #999999;
+        }
+
+        .products, .services {
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+
+        .card {
+            background-color: #797878;
+            padding: 20px;
+            border-radius: 8px;
+            width: 30%;
+            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+
+        .card img {
+            max-width: 100%;
+            border-radius: 8px;
+        }
+
+        .card h3 {
+            margin: 15px 0;
+        }
+
+        /* Pie de página */
+        footer {
+            background-color: #535353;
+            color: #ffffff;
+            text-align: center;
+            padding: 15px;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Encabezado -->
+    <header>
+        <img src="./Captura de pantalla 2024-11-14 084506.png" alt="Logo">
+        <nav>
+            <ul>
+                <li><a href="#inicio">Inicio</a></li>
+                <li><a href="#productos">Productos</a></li>
+                <li><a href="#servicios">Servicios</a></li>
+                <li><a href="#contacto">Contacto</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Sección Hero -->
+    <section class="hero" id="inicio">
+        
+        <video autoplay muted loop class="video-fondo">
+            <source src="./6161372-hd_1920_1080_30fps.mp4" type="video/mp4">
+        </video>    
+    </section>
+
+    <!-- Sección de Productos -->
+    <section class="section" id="productos">
+        <div class="products">
+            <div class="card">
+                <img src="https://via.placeholder.com/300x200" alt="Producto 1">
+                <h3>Mantenimiento</h3>
+                <p>Una motocicleta de alto rendimiento para los amantes de la velocidad.</p>
+            </div>
+            <div class="card">
+                <img src="https://via.placeholder.com/300x200" alt="Producto 2">
+                <h3>Reparaciones</h3>
+                <p>Ideal para desplazamientos urbanos con comodidad y estilo.</p>
+            </div>
+            <div class="card">
+                <img src="https://via.placeholder.com/300x200" alt="Producto 3">
+                <h3>Revision</h3>
+                <p>Para aventureros que buscan recorrer todos los terrenos.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sección de Servicios -->
+    <section class="section" id="servicios">
+        <h2>Servicios</h2>
+        <div class="services">
+            <div class="card">
+                <h3>Mantenimiento</h3>
+                <p>Servicio de mantenimiento preventivo para asegurar el rendimiento óptimo de tu motocicleta.</p>
+            </div>
+            <div class="card">
+                <h3>Repuestos</h3>
+                <p>Accesorios y repuestos originales para todos los modelos.</p>
+            </div>
+            <div class="card">
+                <h3>Financiación</h3>
+                <p>Opciones de financiación para adquirir tu próxima motocicleta.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sección de Contacto -->
+    <section class="section" id="contacto">
+        <h2>Contacto</h2>
+        <p>Dirección: Calle Principal #123, Ciudad</p>
+        <p>Teléfono: +57 123 456 789</p>
+        <p>Email: contacto@ejemplo.com</p>
+    </section>
+
+    <!-- Pie de página -->
+    <footer>
+        <p>&copy; 2024 Incolmotos - Todos los derechos reservados.</p>
+    </footer>
+
+</body>
+</html>

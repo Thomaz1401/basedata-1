@@ -9,10 +9,10 @@ use App\Http\Controllers\JATSController;
 use App\Http\Controllers\TareaController;
 
 Route::resource('tareas', TareaController::class);
-// Ruta para confirmar la eliminación
 Route::get('tareas/{tarea}/confirmDelete', [TareaController::class, 'confirmDelete'])->name('tareas.confirmDelete');
-// Ruta para confirmar la actualización
 Route::get('tareas/{tarea}/confirmUpdate', [TareaController::class, 'confirmUpdate'])->name('tareas.confirmUpdate');
+
+
 
 Route::get('/provid', [ProviderController::class, 'create2']);
 Route::get('/store2', [ProviderController::class, 'store2']);

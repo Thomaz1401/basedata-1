@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Video de Fondo</title>
+    <style>
+        /* Estilo para que el video cubra toda la pantalla */
+        .video-fondo {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            z-index: -1;
+        }
+
+        .contenido {
+            position: relative;
+            z-index: 1;
+            color: white;
+            text-align: center;
+            padding: 50px;
+        }
+    </style>
+</head>
+<body>
+
+    <video autoplay muted loop class="video-fondo">
+        <source src="./6873340-uhd_3840_2160_25fps.mp4" type="video/mp4">
+        Tu navegador no soporta videos HTML5.
+    </video>
+
+    <div class="contenido">
+        <h1>Bienvenido a mi página</h1>
+        <p>Este es un video de fondo en HTML</p>
+    </div>
+
+</body>
+</html>
