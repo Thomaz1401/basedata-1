@@ -1,121 +1,222 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Replica Ferrari</title>
+    <title>TechNova Solutions</title>
+    <link rel="stylesheet" href="styles.css">
     <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
+        /* Global Styles */
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    color: #333;
+}
 
-        body {
-            font-family: 'Arial', sans-serif;
-        }
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
 
-        /* Imagen de fondo a pantalla completa */
-        .hero {
-            background: url(./6873340-uhd_3840_2160_25fps.mp4);
-            background-size: cover;
-            height: 100vh;
-            color: white;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            text-align: center;
-            position: relative;
-        }
+header {
+    background: #000;
+    color: #fff;
+    padding: 10px 0;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+}
 
-        .hero-overlay {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: rgba(0, 0, 0, 0.5);
-        }
+header .logo {
+    font-size: 1.5rem;
+    font-weight: bold;
+}
 
-        h1 {
-            z-index: 2;
-            font-size: 4rem;
-            text-transform: uppercase;
-        }
+header nav ul {
+    list-style: none;
+    display: flex;
+    justify-content: flex-end;
+}
 
-        /* Menú de navegación */
-        nav {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            background: rgba(0, 0, 0, 0.7);
-            padding: 10px 20px;
-            z-index: 100;
-        }
+header nav ul li {
+    margin: 0 10px;
+}
 
-        nav a {
-            color: white;
-            text-decoration: none;
-            font-size: 1.2rem;
-            margin: 0 20px;
-            transition: color 0.3s;
-        }
+header nav ul li a {
+    text-decoration: none;
+    color: #fff;
+    font-weight: bold;
+    text-transform: uppercase;
+}
 
-        nav a:hover {
-            color: #ff0000; /* Color Ferrari */
-        }
+.hero {
+    height: 100vh;
+    background: linear-gradient(to right, #0066cc, #00cc99);
+    color: #fff;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 20px;
+}
 
-        /* Sección de contenido */
-        .content {
-            background-color: #f8f8f8;
-            padding: 40px 20px;
-            text-align: center;
-        }
+.hero h1 {
+    font-size: 3rem;
+}
 
-        .content h2 {
-            font-size: 2.5rem;
-            margin-bottom: 20px;
-        }
+.hero .cta-btn {
+    margin-top: 20px;
+    background: #fff;
+    color: #0066cc;
+    text-decoration: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    font-size: 1.2rem;
+    text-transform: uppercase;
+}
 
-        .content p {
-            font-size: 1.2rem;
-            color: #333;
-        }
+.services {
+    background: #f4f4f4;
+    padding: 50px 20px;
+    text-align: center;
+}
 
-        /* Estilo responsive */
-        @media (max-width: 768px) {
-            h1 {
-                font-size: 2.5rem;
-            }
-            .content h2 {
-                font-size: 2rem;
-            }
-        }
+.services h2 {
+    margin-bottom: 20px;
+}
+
+.service-cards {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+}
+
+.service-cards .card {
+    background: #fff;
+    padding: 20px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    flex: 1;
+}
+
+.testimonials {
+    padding: 50px 20px;
+    text-align: center;
+    background: #0066cc;
+    color: #fff;
+}
+
+.testimonials h2 {
+    margin-bottom: 20px;
+}
+
+.testimonial {
+    margin-bottom: 20px;
+}
+
+.contact {
+    padding: 50px 20px;
+    text-align: center;
+}
+
+.contact form {
+    max-width: 600px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+}
+
+.contact form input, 
+.contact form textarea, 
+.contact form button {
+    margin: 10px 0;
+    padding: 10px;
+    width: 100%;
+}
+
+footer {
+    background: #000;
+    color: #fff;
+    padding: 20px 0;
+    text-align: center;
+}
+
     </style>
 </head>
 <body>
+    <header>
+        <div class="container">
+            <div class="logo">TechNova</div>
+            <nav>
+                <ul>
+                    <li><a href="#services">Services</a></li>
+                    <li><a href="#testimonials">Testimonials</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
 
-    <!-- Menú de navegación -->
-    <nav>
-        <a href="#inicio">Inicio</a>
-        <a href="#modelos">Modelos</a>
-        <a href="#contacto">Contacto</a>
-    </nav>
+    <main>
+        <section class="hero">
+            <h1>Innovative Tech Solutions for Your Business</h1>
+            <p>Empowering businesses with cutting-edge technology and tailored solutions.</p>
+            <a href="#contact" class="cta-btn">Get Started</a>
+        </section>
 
-    <!-- Sección principal con fondo de imagen -->
-    <div class="hero">
-        <div class="hero-overlay"></div>
-        <h1>Bienvenido a Ferrari</h1>
-    </div>
+        <section id="services" class="services">
+            <h2>Our Services</h2>
+            <div class="service-cards">
+                <div class="card">
+                    <h3>Web Development</h3>
+                    <p>Custom websites designed to enhance your online presence.</p>
+                </div>
+                <div class="card">
+                    <h3>Cloud Solutions</h3>
+                    <p>Secure and scalable cloud services for your growing business.</p>
+                </div>
+                <div class="card">
+                    <h3>AI & Automation</h3>
+                    <p>Streamline operations with artificial intelligence and automation tools.</p>
+                </div>
+            </div>
+        </section>
 
-    <!-- Contenido adicional -->
-    <div class="content" id="inicio">
-        <h2>Descubre la Elegancia y el Rendimiento</h2>
-        <p>Vive la experiencia Ferrari, donde la innovación y la velocidad se encuentran para ofrecerte el máximo nivel de excelencia automotriz.</p>
-    </div>
+        <section id="testimonials" class="testimonials">
+            <h2>What Our Clients Say</h2>
+            <div class="testimonial">
+                <p>"TechNova transformed our business. Their expertise in web development is unmatched!"</p>
+                <span>- John Doe, CEO of Business Inc.</span>
+            </div>
+            <div class="testimonial">
+                <p>"The cloud solutions provided by TechNova are both reliable and affordable."</p>
+                <span>- Sarah Smith, CTO of TechWorld</span>
+            </div>
+        </section>
 
+        <section id="contact" class="contact">
+            <h2>Contact Us</h2>
+            <form>
+                <input type="text" placeholder="Your Name" required>
+                <input type="email" placeholder="Your Email" required>
+                <textarea placeholder="Your Message" rows="5" required></textarea>
+                <button type="submit">Send Message</button>
+            </form>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2024 TechNova Solutions. All rights reserved.</p>
+            <p>Follow us on:
+                <a href="#">LinkedIn</a> | <a href="#">Twitter</a> | <a href="#">Facebook</a>
+            </p>
+        </div>
+    </footer>
 </body>
 </html>
 
-</html>
