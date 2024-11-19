@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>JATS</title>
+  <style>
+    /* Estilo para la pantalla de introducción */
+    #intro-screen {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: black;
+      color: white;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-size: 48px;
+      font-family: Arial, sans-serif;
+      z-index: 9999;
+      transition: opacity 1s ease-out; /* Transición para el desvanecimiento */
+    }
+
+    #intro-screen.hidden {
+      opacity: 0; /* Se desvanece la pantalla negra */
+      pointer-events: none; /* Desactiva la interacción con la pantalla */
+    }
+
+    /* Contenido de la página principal */
+    #main-content {
+      display: none; /* Oculta el contenido hasta que termine la introducción */
+    }
+
+    #main-content.visible {
+      display: block; /* Muestra el contenido cuando termina la introducción */
+    }
+  </style>
+</head>
+<body>
+  <!-- Pantalla negra de introducción -->
+  <div id="intro-screen">JATS</div>
+
+  <!-- Contenido principal de la página -->
+  <div id="main-content">
+    <h1>Bienvenido a mi página</h1>
+    <p>Aquí va el contenido principal...</p>
+    <!-- Más contenido -->
+  </div>
+
+  <script>
+    // Esperar 3 segundos antes de desvanecer la pantalla negra
+    window.addEventListener("load", () => {
+      const introScreen = document.getElementById("intro-screen");
+      const mainContent = document.getElementById("main-content");
+
+      setTimeout(() => {
+        introScreen.classList.add("hidden"); // Añade la clase para desvanecer
+        setTimeout(() => {
+          introScreen.style.display = "none"; // Elimina la pantalla negra
+          mainContent.classList.add("visible"); // Muestra el contenido principal
+        }, 1000); // Espera el tiempo de la transición (1s)
+      }, 3000); // Espera 3 segundos antes de iniciar el desvanecimiento
+    });
+  </script>
+</body>
+</html>
