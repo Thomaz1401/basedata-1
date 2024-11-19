@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Taller Automovilístico</title>
+    <style>
+        /* Estilos generales */
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #000000;
+            color: #ffffff;
+        }
+
+        /* Encabezado */
+        header {
+            background-color: #222;
+            color: #fff;
+            padding: 20px 0;
+            text-align: center;
+        }
+
+        header h1 {
+            margin: 0;
+            font-size: 2.5em;
+            font-family: 'Cambria', serif;
+        }
+
+        header p {
+            font-size: 1.1em;
+            margin: 5px 0;
+        }
+
+        /* Menú hamburguesa */
+        .label-check {
+            display: none;
+        }
+
+        .hamburger-label {
+            width: 30px;
+            height: 30px;
+            display: block;
+            cursor: pointer;
+            position: absolute;
+            top: 20px;
+            right: 20px;
+        }
+
+        .hamburger-label div {
+            width: 30px;
+            height: 4px;
+            background-color: #fff;
+            position: absolute;
+            transition: all 0.3s;
+        }
+
+        .line1 {
+            top: 0;
+        }
+
+        .line2 {
+            top: 10px;
+        }
+
+        .line3 {
+            top: 20px;
+        }
+
+        #label-check:checked + .hamburger-label .line1 {
+            transform: rotate(45deg) translate(5px, 5px);
+        }
+
+        #label-check:checked + .hamburger-label .line3 {
+            transform: rotate(-45deg) translate(5px, -5px);
+        }
+
+        #label-check:checked + .hamburger-label .line2 {
+            opacity: 0;
+        }
+
+        /* Menú de navegación */
+        nav {
+            background-color: #ffbb00;
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            display: none;
+            z-index: 1000;
+        }
+
+        #label-check:checked ~ nav {
+            display: block;
+        }
+
+        nav ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+            flex-direction: column;
+            text-align: center;
+            font-family: 'Arial', sans-serif;
+        }
+
+        nav ul li {
+            border-bottom: 1px solid #fff;
+            background-color: #ffbb00;
+        }
+
+        nav ul li a {
+            display: block;
+            padding: 15px;
+            color: #222;
+            text-decoration: none;
+            font-size: 1.2em;
+            transition: background-color 0.3s ease;
+        }
+
+        nav ul li a:hover {
+            background-color: #f39c12;
+        }
+
+        /* Hero */
+        .hero {
+            background-image: url('/duelo/pexels-pixabay-164634.jpg');
+            background-size: cover;
+            background-position: center;
+            height: 500px;
+            color: white;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 20px;
+        }
+
+        .hero h2 {
+            font-size: 3em;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+        }
+
+        /* Secciones */
+        .content {
+            padding: 40px 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .content h3 {
+            color: #8f8f8f;
+            font-size: 2em;
+            margin-bottom: 20px;
+        }
+
+        .services {
+            display: flex;
+            justify-content: space-evenly;
+            gap: 20px;
+            flex-wrap: wrap;
+            margin-top: 30px;
+        }
+
+        .service {
+            background-color: #e99700;
+            padding: 20px;
+            border-radius: 8px;
+            width: 30%;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            transition: transform 0.3s;
+        }
+
+        .service:hover {
+            transform: translateY(-10px);
+        }
+
+        .service h4 {
+            color: #333;
+            margin-bottom: 10px;
+        }
+
+        footer {
+            background-color: #222;
+            color: #fff;
+            padding: 20px;
+            text-align: center;
+        }
+
+        footer p {
+            margin: 0;
+        }
+
+        /* Responsividad */
+        @media (max-width: 768px) {
+            .services {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .service {
+                width: 80%;
+                margin-bottom: 20px;
+            }
+
+            .hamburger-label {
+                right: 20px;
+                top: 15px;
+            }
+        }
+
+    </style>
+</head>
+<body>
+
+    <!-- Encabezado -->
+    <header>
+        <h1>Taller Automovilístico JATS</h1>
+        <p>Su vehículo en las mejores manos</p>
+    </header>
+
+    <!-- Menú hamburguesa -->
+    <input class="label-check" id="label-check" type="checkbox">
+    <label for="label-check" class="hamburger-label">
+        <div class="line1"></div>
+        <div class="line2"></div>
+        <div class="line3"></div>
+    </label>
+
+    <!-- Navegación -->
+    <nav>
+        <ul>
+            <li><a href="#inicio">Inicio</a></li>
+            <li><a href="#servicios">Servicios</a></li>
+            <li><a href="#nosotros">Nosotros</a></li>
+            <li><a href="#contacto">Contacto</a></li>
+        </ul>
+    </nav>
+
+    <!-- Sección Hero -->
+    <section class="hero">
+        <h2>Bienvenidos a nuestro Taller Automovilístico</h2>
+    </section>
+
+    <!-- Contenido principal -->
+    <section class="content" id="inicio">
+        <h3>Bienvenidos a JATS</h3>
+        <p>Ofrecemos servicios de alta calidad para mantener su vehículo en óptimas condiciones.</p>
+    </section>
+
+    <!-- Servicios -->
+    <section class="content" id="servicios">
+        <h3>Nuestros Servicios</h3>
+        <div class="services">
+            <div class="service">
+                <h4>Mantenimiento</h4>
+                <p>Revisiones completas para asegurar el buen estado de su vehículo.</p>
+            </div>
+            <div class="service">
+                <h4>Reparaciones</h4>
+                <p>Soluciones integrales a los problemas de su vehículo.</p>
+            </div>
+            <div class="service">
+                <h4>Revision</h4>
+                <p>Utilizamos aceites de alta calidad para prolongar la vida del motor.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sección de Nosotros -->
+    <section class="content" id="nosotros">
+        <h3>Acerca de Nosotros</h3>
+        <p>Brindamos la mejor experiencia calidad-precio a nuestros clientes.</p>
+    </section>
+
+    <!-- Contacto -->
+    <section class="content" id="contacto">
+        <h3>Contacto</h3>
+        <p>Dirección: Calle Cra # 123, Popayán</p>
+        <p>Teléfono: 123 456 789</p>
+        <p>Email: contacto@tallerelrapido.com</p>
+    </section>
+
+    <!-- Pie de página -->
+    <footer>
+        <p>&copy; 2024 Taller Automovilístico JATS. Todos los derechos reservados.</p>
+    </footer>
+
+</body>
+</html>

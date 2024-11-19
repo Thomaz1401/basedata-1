@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Taller Automotriz - Solicitud de Servicio</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+        }
+        .container {
+            width: 80%;
+            max-width: 600px;
+            background-color: #ffffff;
+            padding: 20px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+        }
+        h1 {
+            color: #333333;
+        }
+        form {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+        label {
+            font-weight: bold;
+            color: #555555;
+        }
+        input, textarea, select, button {
+            padding: 10px;
+            border: 1px solid #cccccc;
+            border-radius: 4px;
+            font-size: 16px;
+        }
+        button {
+            background-color: #007bff;
+            color: #ffffff;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+        button:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Solicitar Servicio de Mantenimiento o Cita para Reparación</h1>
+        <form action="#" method="post">
+            <!-- Información del cliente -->
+            <label for="name">Nombre completo:</label>
+            <input type="text" id="name" name="name" required>
+
+            <label for="email">Correo electrónico:</label>
+            <input type="email" id="email" name="email" required>
+
+            <label for="phone">Número de teléfono:</label>
+            <input type="tel" id="phone" name="phone" required>
+
+            <!-- Selección de servicio -->
+            <label for="service-type">Tipo de Servicio:</label>
+            <select id="service-type" name="service-type" required>
+                <option value="">Selecciona un servicio</option>
+                <option value="mantenimiento">Mantenimiento</option>
+                <option value="reparacion">Reparación</option>
+            </select>
+
+            <!-- Información del vehículo -->
+            <label for="vehicle">Modelo y Año del Vehículo:</label>
+            <input type="text" id="vehicle" name="vehicle" required>
+
+            <!-- Detalles adicionales -->
+            <label for="details">Detalles adicionales:</label>
+            <textarea id="details" name="details" rows="4" placeholder="Describe brevemente el problema o el servicio que necesitas..."></textarea>
+
+            <!-- Botón de envío -->
+            <button type="submit">Enviar Solicitud</button>
+        </form>
+    </div>
+</body>
+</html>
