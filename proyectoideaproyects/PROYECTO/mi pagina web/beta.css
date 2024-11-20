@@ -42,6 +42,8 @@ section {
     border: 5px solid #ffffff;
     padding: 20px;
     margin-bottom: 20px;
+    margin-left: 100px;
+    margin-right: 100px;
 }
 
 article img {
@@ -80,5 +82,13 @@ footer {
 .tamañoImagen{
 
     display: flex;
+    height: 700px;
+    
+
+}
+.centrarTitulos{
+
+    display: flex;
+    align-self: center;
 
 }
