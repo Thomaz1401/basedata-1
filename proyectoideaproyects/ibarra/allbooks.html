@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Biblioteca Online</title>
+    <style>
+        /* Estilos globales */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #151847;
+            color: #333;
+        }
+
+        /* Cabecera */
+        header {
+            background-color: #161394;
+            color: white;
+            padding: 1rem 2rem;
+            text-align: center;
+        }
+
+        header h1 {
+            margin: 0;
+            font-size: 2rem;
+        }
+
+        /* Contenedor principal */
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 2rem auto;
+            background-color: rgb(38, 52, 129);
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            padding: 1.5rem;
+        }
+
+        /* Tabla */
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 1rem;
+        }
+
+        table thead {
+            background-color: #161394;
+            color: white;
+        }
+
+        table th, table td {
+            padding: 0.75rem;
+            text-align: left;
+            border-bottom: 1px solid #ddd;
+        }
+
+        table th {
+            font-weight: bold;
+        }
+
+        table tr:hover {
+            background-color: #f1f1f1;
+        }
+
+        /* Acciones */
+        .actions a {
+            text-decoration: none;
+            color: white;
+            background-color: #1ac737;
+            padding: 0.5rem 1rem;
+            border-radius: 4px;
+            margin-right: 0.5rem;
+        }
+
+        .actions a:hover {
+            background-color: #012b9e;
+        }
+
+        .actions form {
+            display: inline;
+        }
+
+        .actions button {
+            background-color: #dc3545;
+            color: white;
+            border: none;
+            padding: 0.5rem 1rem;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        .actions button:hover {
+            background-color: #c82333;
+        }
+
+        /* Pie de página */
+        footer {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 1rem;
+            margin-top: 2rem;
+        }
+
+        footer p {
+            margin: 0;
+            font-size: 0.9rem;
+        }
+    </style>
+</head>
+<body>
+    <!-- Cabecera -->
+    <header>
+        <h1>Biblioteca Online</h1>
+        <p>Encuentra tus libros favoritos y explora nuevas lecturas</p>
+    </header>
+
+    <!-- Contenido principal -->
+    <div class="container">
+        <h2>Catálogo de Libros</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th>Título</th>
+                    <th>URL del libro</th>
+                    <th>Descripción</th>
+                    <th>Acciones</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach ($books as $book)
+                <tr>
+                    <td>{{ $book->title }}</td>
+                    <td><a href="{{ $book->bookURL }}" target="_blank">{{ $book->bookURL }}</a></td>
+                    <td>{{ $book->description }}</td>
+                    <td class="actions">
+                        <a href="{{ route('Books.viewBooks', $book->id) }}">Ver libro</a>
+                        <a href="{{ route('Books.editBooks', $book->id) }}">Editar</a>
+                        <form action="{{ route('Books.delete', $book->id) }}" method="POST" onsubmit="return confirm('¿Estás seguro de que deseas eliminar el libro?');">
+                            @csrf
+                            @method('DELETE')
+                            <button type="submit">Eliminar</button>
+                        </form>
+                 
