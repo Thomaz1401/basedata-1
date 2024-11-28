@@ -1,0 +1,66 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .card {
+            width: 190px;
+            height: 254px;
+            background: #000000;
+            position: relative;
+            display: flex;
+            place-content: center;
+            place-items: center;
+            overflow: hidden;
+            border-radius: 20px;
+          }
+          
+          .card h2 {
+            z-index: 1;
+            color: white;
+            font-size: 2em;
+          }
+          .card p{
+            color: #ffffff;
+          }
+          
+          .card::before {
+            content: '';
+            position: absolute;
+            width: 100px;
+            background-image: linear-gradient(180deg, rgb(255, 187, 0), rgb(218, 160, 0));
+            height: 130%;
+            animation: rotBGimg 3s linear infinite;
+            transition: all 0.2s linear;
+          }
+          
+          @keyframes rotBGimg {
+            from {
+              transform: rotate(0deg);
+            }
+          
+            to {
+              transform: rotate(360deg);
+            }
+          }
+          
+          .card::after {
+            content: '';
+            position: absolute;
+            background: #000000;
+            ;
+            inset: 5px;
+            border-radius: 15px;
+          }  
+    </style>
+</head>
+<body>
+    <div class="card">
+        <h2>su cita se ha agendado con exito</h2>
+        <p>en vrebe nos comunicaremos con usted</p>
+    </div>
+</body>
+</html>
